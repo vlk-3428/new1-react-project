@@ -1,24 +1,18 @@
-import React,{ useState } from 'react';
+import React from "react";
 import styled from "styled-components";
 
-
 const StyledBut = styled.text`
-
-    position:absolute;
-    bottom:5px;
-    right:5px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 `;
 
-const Button = () =>{
+const Button = () => {
+  return (
+    <StyledBut>
+      <button type="submit">Send</button>
+    </StyledBut>
+  );
+};
 
-    return <StyledBut >
-        
-        <button type="button" >Send</button>
-        </StyledBut>;
-    
-    
-}
-
-
-
-export default Button
+export default Button;

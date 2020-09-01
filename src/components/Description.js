@@ -1,31 +1,26 @@
-import React, { useState } from 'react';
+import React from "react";
 
-function Description() {
-
-  const [description, setDescription] = useState( {description: '',} );
-
-
+function Description(props) {
   const handleChange = (e) => {
-    console.log(e.target.value);
-    // const name = e.target.name;
     const value = e.target.value;
-    // description[name] = value;
-    setDescription(value);
-  }
+    props.setDescription(value);
+  };
 
-  const save = (e) => {
-    e.preventDefault();
-    console.log(description);
-  }
+  // console.log(props.description, "description");
 
   return (
     <div>
-        <form method="post" onSubmit={save}>
-        <textarea id="title" placeholder="Description" rows="4" cols="35" name="description" onChange={handleChange} form="useform" ></textarea>
-          
-        </form>
+      <textarea
+        id="title"
+        placeholder="Description"
+        rows="4"
+        cols="35"
+        name="description"
+        onChange={handleChange}
+        form="useform"
+      ></textarea>
     </div>
   );
-};
+}
 
 export default Description;

@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React from "react";
 
 function Title(props) {
-
-  const [title, setTitle] = useState( {title: '',});
-
-
   const handleChange = (e) => {
-    // const name = e.target.name;
     const value = e.target.value;
-    // title[name] = value;
-    setTitle(value);
-  }
+    props.setTitle(value);
+  };
 
-  const save = (e) => {
-    e.preventDefault();
-    console.log(title);
-  }
+  // console.log(props.title, "title");
 
   return (
     <div>
-        <form method="post" onSubmit={save}>
-           <input type="text" placeholder="Title" name="title"  onChange={handleChange} />
-           {useState}
-         
-        </form>
+      <input
+        type="text"
+        placeholder="Title"
+        name="title"
+        onChange={handleChange}
+      />
     </div>
   );
-};
+}
 
 export default Title;
